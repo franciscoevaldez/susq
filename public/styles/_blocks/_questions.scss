@@ -1,0 +1,36 @@
+// definition for question block
+
+.question{
+
+  margin:         5em 0 2em 0;
+  padding:        0 0 2em 0;
+  border-bottom:  1px solid $col-titles;
+
+  &__responses{
+    display:          flex;
+    flex-direction:   row;
+  }
+
+  &__reference{
+    text-transform:  uppercase;
+    font-size:       1.2em;
+    line-height:     1.2em;
+    margin:          0;
+
+    &:last-of-type{
+      text-align: right;
+    }
+  }
+
+  &__scale{
+    flex-grow: 2;
+    text-align: center;
+    display: flex;
+
+    & input[type=radio]{
+      flex-grow: 1;
+      background-color: red;
+    }
+  }
+
+}

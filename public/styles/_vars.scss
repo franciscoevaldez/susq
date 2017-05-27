@@ -1,0 +1,17 @@
+/* Global style variables */
+
+// Colors by name
+$cl-darkblue:   #325266;
+$cl-electic:    #4A89F6;
+$cl-skyblue:    #CDE8F8;
+$cl-aqua:       #30D0AE;
+$cl-white:      #FAFAFA;
+$cl-orange:     #FB8F41;
+
+// Colors by function
+$col-background:   $cl-darkblue;
+$col-titles:       $cl-skyblue;
+$col-text:         $cl-white;
+
+// Fonts
+$ft-fonts:     'Fira Sans', Helvetica, sans-serif;

@@ -8,7 +8,7 @@
   <div class="respond__questions">
 
     <% for(var slug in public.questions._data){ %>
-      <%- include("../questions/_question", { title: public.questions._data[slug].question }) %>
+      <%- include("../questions/_question", { title: public.questions._data[slug].question, index: slug }) %>
     <% }; %>
 
   </div>
