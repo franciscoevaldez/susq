@@ -2,6 +2,9 @@
 
 @import "vars.scss";
 @import "base.scss";
+@import "commons.scss";
+@import "status.scss";
 
 
+@import "_blocks/_setup.scss";
 @import "_blocks/_questions.scss";

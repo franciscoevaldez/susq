@@ -1,17 +1,22 @@
 /* Global style variables */
 
 // Colors by name
-$cl-darkblue:   #325266;
-$cl-electic:    #4A89F6;
+$cl-darkblue:   #20242a;
+$cl-electric:   #4A89F6;
 $cl-skyblue:    #CDE8F8;
 $cl-aqua:       #30D0AE;
-$cl-white:      #FAFAFA;
+$cl-white:      #aab2bf;
 $cl-orange:     #FB8F41;
+$cl-yellow:     #e5c081;
 
 // Colors by function
 $col-background:   $cl-darkblue;
 $col-titles:       $cl-skyblue;
 $col-text:         $cl-white;
+$col-actions:      $cl-orange;
 
 // Fonts
 $ft-fonts:     'Fira Sans', Helvetica, sans-serif;
+
+// Spacings
+$column-width:     65%; // max witdh for full column text

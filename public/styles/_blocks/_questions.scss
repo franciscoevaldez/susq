@@ -2,9 +2,14 @@
 
 .question{
 
-  margin:         5em 0 2em 0;
-  padding:        0 0 2em 0;
-  border-bottom:  1px solid $col-titles;
+  margin:          5em 0 2em 0;
+  padding:         0 0 2em 0;
+  border-bottom:   1px solid $col-titles;
+
+  & h1{
+    max-width:     $column-width;
+    line-height:   1.2em
+  }
 
   &__responses{
     display:          flex;
@@ -13,8 +18,8 @@
 
   &__reference{
     text-transform:  uppercase;
-    font-size:       1.2em;
-    line-height:     1.2em;
+    font-size:       1em;
+    line-height:     1.1em;
     margin:          0;
 
     &:last-of-type{

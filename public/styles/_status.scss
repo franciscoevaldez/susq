@@ -1,0 +1,15 @@
+// app status
+
+body.status{
+
+  &--setup{
+    & #page--setup{display: inline;}
+    & #page--respond{display: none;}
+  }
+
+  &--respond{
+    & #page--setup{display: none;}
+    & #page--respond{display: inline;}
+  }
+
+}
