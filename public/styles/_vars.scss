@@ -2,18 +2,22 @@
 
 // Colors by name
 $cl-darkblue:   #20242a;
-$cl-electric:   #4A89F6;
+$cl-blue:       #192b4c;
 $cl-skyblue:    #CDE8F8;
 $cl-aqua:       #30D0AE;
-$cl-white:      #aab2bf;
+$cl-white:      #FAFAFA;
+$cl-lightgray:  #aab2bf;
 $cl-orange:     #FB8F41;
-$cl-yellow:     #e5c081;
 
 // Colors by function
 $col-background:   $cl-darkblue;
 $col-titles:       $cl-skyblue;
-$col-text:         $cl-white;
+$col-text:         $cl-lightgray;
 $col-actions:      $cl-orange;
+
+$col-inputbg:      $cl-blue;
+$col-inputborder:  $cl-skyblue;
+$col-inputtext:    $cl-white;
 
 // Fonts
 $ft-fonts:     'Fira Sans', Helvetica, sans-serif;

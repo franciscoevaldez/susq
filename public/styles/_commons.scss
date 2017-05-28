@@ -25,8 +25,29 @@ a.button{
   }
 
   &:active{
-    margin: $btn-height 0 0 $btn-height;
-    box-shadow: 0 0 0 0 $col-actions;
+    margin:        $btn-height 0 0 $btn-height;
+    box-shadow:    0 0 0 0 $col-actions;
   }
 
+}
+
+label{
+  text-transform:  uppercase;
+  display:         block;
+  font-size:       1rem;
+  letter-spacing:  0.02em;
+  margin:          0.25em 0 0.5em 0;
+}
+
+input[type="text"]{
+  font-size:        1.2rem;
+  margin:           0.25em 0 0.5em 0;
+  padding:          0.6em;
+  color:            $col-inputtext;
+  background-color: $col-inputbg;
+  border:           2px solid $col-inputborder;
+
+  &:active{
+    border-color: red;
+  }
 }
