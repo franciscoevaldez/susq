@@ -39,15 +39,33 @@ label{
   margin:          0.25em 0 0.5em 0;
 }
 
+.input{
+
+  &__message{
+    text-transform: none;
+    color: $cl-orange;
+    padding-left: 1em;
+  }
+
+  &--error{
+    border-color: red !important;
+  }
+
+}
+
 input[type="text"]{
   font-size:        1.2rem;
-  margin:           0.25em 0 0.5em 0;
-  padding:          0.6em;
+  margin:           0 0 2.5em 0;
+  padding:          0.6em 0;
   color:            $col-inputtext;
-  background-color: $col-inputbg;
+  background-color: $col-background;
   border:           2px solid $col-inputborder;
+  border-width:     0 0 2px 0;
+  width:            100%;
 
-  &:active{
-    border-color: red;
+  &:focus{
+    outline:        none;
+    border-color:   $cl-orange;
   }
+
 }
