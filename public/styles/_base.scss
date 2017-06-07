@@ -12,12 +12,12 @@ body{
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight:       normal;
-  letter-spacing:    0.005em;
+  font-weight:       600;
+  //letter-spacing:    0.005em;
   color:             $col-titles;
 }
 
 p{
   line-height:     1.5em;
-  letter-spacing:  0.035em;
+  //letter-spacing:  0.035em;
 }

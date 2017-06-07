@@ -5,6 +5,9 @@
 @import "commons.scss";
 @import "status.scss";
 
-
+// blocks
 @import "_blocks/_setup.scss";
 @import "_blocks/_questions.scss";
+
+// elements
+@import "_elements/_radio.scss";

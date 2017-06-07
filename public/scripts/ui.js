@@ -3,7 +3,7 @@
     - handle ui interactions
 */
 
-// buttons ---------------
+// buttons ---------------------------------------------
 var uiButtons = (function(){
 
   var btnStart = document.getElementById('btn--start');
@@ -18,9 +18,15 @@ var uiButtons = (function(){
 
   btnStart.addEventListener("click", _btnStartWasPressed, true);
 
+  var uiBtnSend = (function(){
+
+    var button = document.getElementById('')
+
+  })();
+
 })()
 
-// inputs
+// inputs ---------------------------------------------
 var uiTitleInput = (function(){
 
   // elements
