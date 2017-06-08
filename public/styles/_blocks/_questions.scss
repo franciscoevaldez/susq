@@ -7,9 +7,11 @@
   height:          75vh;
 
   & h1{
-    max-width:     $column-width;
+    max-width:     65%;
     font-size:     3.25em;
     line-height:   1.2em;
+
+    @media (max-width: $bp-medium) { max-width: 80%; }
   }
 
   &__responses{

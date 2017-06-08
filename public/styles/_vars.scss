@@ -23,4 +23,10 @@ $col-inputtext:    $cl-white;
 $ft-fonts:     'Work Sans', Helvetica, sans-serif;
 
 // Spacings
-$column-width:     65%; // max witdh for full column text
+$content-width:    70em; // max width for all content
+
+// Media query breakpoints
+$bp-large:      75em;
+$bp-medium:     62em;
+$bp-small:      48em;
+$bp-minimum:    36em;
