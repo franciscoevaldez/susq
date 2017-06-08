@@ -25,8 +25,8 @@
 
 var app = (function(){
 
-  var state
-  var status = ["setup", "respond", "success"];
+  var state,
+      status = ["setup", "respond", "success"];
 
   // required DOM elements
   var body = document.body;
@@ -57,12 +57,73 @@ var app = (function(){
     }
   }
 
+  // get radio elements
+  var radioSets = [];
+  for (var i = 0; i < 10; i++) {
+    var _responseID = 'q' + i;
+    radioSets[i] = document.getElementsByName(_responseID)
+  }
+
+  // get score from responses
+  var getScoreFromResponses = function(responses){
+
+    // odd response normalization is not needed
+    // normalize even responses
+    for (var i = 1; i < responses.length; i=i+2) {
+      responses[i] = 4 - responses[i]
+    }
+
+    // add all responses
+    var sum = 0;
+    for (var i = 0; i < responses.length; i++) {
+      sum = sum + responses[i]
+    }
+
+    // multiply
+    var result = sum * 2.5;
+
+    return result;
+
+  }
+
+  // get responses
+  var getResponses = function(){
+
+    // loop through question arrays
+    var _picks = []
+    for (var i = 0; i < radioSets.length; i++) {
+
+      _radioSet = radioSets[i];
+
+      for (var sel = 0; sel < _radioSet.length; sel++) {
+        if(_radioSet[sel].checked){
+          _picks[i] = sel;
+        }
+      }
+
+    }
+
+    return _picks;
+
+  }
+
+  // get results
+  var result = function(){
+
+    // get picked values
+    _responses = getResponses();
+    // calculate score from responses
+    var _score = getScoreFromResponses(_responses);
+
+    return _score;
+
+  }
+
   return {
-    status: state,
-    changeToStep: goToStep
+    status:       state,
+    changeToStep: goToStep,
+    getResult:    result,
+    getResponses: getResponses
   };
 
 })();
-
-// temp only for development
-app.changeToStep(1);
