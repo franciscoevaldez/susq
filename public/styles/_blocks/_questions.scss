@@ -1,14 +1,15 @@
 // definition for question block
-
 .question{
 
-  margin:          5em 0 2em 0;
-  padding:         0 0 2em 0;
+  margin:          0;
+  padding:         1.5em 0 2em 0;
   border-bottom:   1px solid $col-titles;
+  height:          75vh;
 
   & h1{
     max-width:     $column-width;
-    line-height:   1.2em
+    font-size:     3.25em;
+    line-height:   1.2em;
   }
 
   &__responses{

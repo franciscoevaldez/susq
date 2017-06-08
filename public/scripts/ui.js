@@ -1,30 +1,40 @@
 // view controller
 /*  This file will:
-    - handle ui interactions
+    - handle ui interactions              ui.js
+    - show and hide error messages        ui.js
 */
 
-// buttons ---------------------------------------------
-var uiButtons = (function(){
+var ui = (function(){
 
+  // buttons ---------------------------------------------
   var btnStart = document.getElementById('btn--start');
+  var btnSend = document.getElementById('btn--send');
 
-  function _btnStartWasPressed(){
-    var validationResult = validateSetup.all()
+  // Start button (step 0)
+  /* Should validate step 0 inputs, store
+     the new questionnaire and advance to next step */
+  btnStart.addEventListener("click", function(){
 
-    if (validationResult.state) {
-      app.changeToStep(1);
+    var setupValidation = validateSetup.all()
+    if (!setupValidation.isValid) {
+      setupValidation.title()
+      setupValidation.mail()
+      return
     }
-  }
 
-  btnStart.addEventListener("click", _btnStartWasPressed, true);
 
-  var uiBtnSend = (function(){
+    app.changeToStep(1);
 
-    var button = document.getElementById('')
+  }, true);
 
-  })();
+  // Send response button (step 1)
+  /* Should validate user name, all answers,
+     send the response to server and move to the next step */
+
+
 
 })()
+
 
 // inputs ---------------------------------------------
 var uiTitleInput = (function(){

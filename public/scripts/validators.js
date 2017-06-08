@@ -26,7 +26,7 @@ var validateSetup = (function() {
     }
 
     return {
-      state : validState,
+      isValid : validState,
       message : validMessage
     }
 
@@ -52,7 +52,7 @@ var validateSetup = (function() {
     }
 
     return {
-      state : validState,
+      isValid : validState,
       message : validMessage
     }
 
@@ -63,7 +63,7 @@ var validateSetup = (function() {
         mail = validateMail(),
         state, message;
 
-    if (title.state && mail.state) {
+    if (title.isValid && mail.isValid) {
       state = true;
     } else {
       state = false;
@@ -72,7 +72,7 @@ var validateSetup = (function() {
     message = "Title: " + title.message + ", mail: " + mail.message;
 
     return {
-      state : state,
+      isValid : state,
       message : message
     }
 

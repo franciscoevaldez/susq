@@ -1,8 +1,14 @@
 <div id="page--respond" class="respond">
 
-  <div class="respond__user">
-    Your name:
-    <input type="text" name="response--name" id="response--name">
+  <header class="headbar">
+    <h1 class="headbar__title"><strong>Q title</strong> | S.U.S. questionnaire</h1>
+    <div class="headbar__actions">Share</div>
+  </header>
+
+  <div class="respond__intro question">
+    <h1 class="question__questiontext">What's your name?</h1>
+    <input type="text" name="response--name" id="response--name" placeholder="Name">
+    <a href="#" id="btn--respond" class="button">Get started</a>
   </div>
 
   <div class="respond__questions">
@@ -14,7 +20,7 @@
   </div>
 
   <div class="respond__send">
-    <a href="#" class="button">Send response</a>
+    <a href="#" id="btn--send" class="button">Send response</a>
   </div>
 
 </div>

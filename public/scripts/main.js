@@ -1,13 +1,21 @@
 // main javascript file
 
 /* this app needs to:
-  - handle app status
-  - change views
-  - handle ui interactions
-  - validate inputs on setup screens
-  - validate form responses
-  - show and hide error messages
-  - send the form email request
+  - handle app status                   this file
+  - change views                        this file
+  - setup answer view                   this file
+  - send the form email request         this file
+  - handle ui interactions              ui.js
+  - show and hide error messages        ui.js
+  - validate inputs on setup screens    validators.js
+  - validate form responses             validators.js
+  - describe a Questionnaire object     questionnaire.js
+      - hold title
+      - hold destination email
+  - describe a Response object          response.js
+      - hold user name
+      - hold individual answers
+      - hold final score
 */
 
 /* This file will:
@@ -27,7 +35,7 @@ var app = (function(){
   console.log('App initializated with status 0')
 
   // jump to step
-  function toStep(newState){
+  function goToStep(newState){
 
     if (newState >= status.length) {
       console.log('State change failed, requested state is out of range');
@@ -51,7 +59,7 @@ var app = (function(){
 
   return {
     status: state,
-    changeToStep: toStep
+    changeToStep: goToStep
   };
 
 })();
