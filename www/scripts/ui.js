@@ -1,26 +1,66 @@
 // view controller
 /*  This file will:
-    - handle ui interactions
+    - handle ui interactions              ui.js
+    - show and hide error messages        ui.js
 */
 
-// buttons ---------------
-var uiButtons = (function(){
+var ui = (function(){
 
-  var btnStart = document.getElementById('btn--start');
+  // buttons ---------------------------------------------
+  var btnStart    = document.getElementById('btn--start'),
+      btnRespond  = document.getElementById('btn--respond'),
+      btnSend     = document.getElementById('btn--send');
 
-  function _btnStartWasPressed(){
-    var validationResult = validateSetup.all()
+  // Start button (step 0)
+  /* Should validate step 0 inputs, store
+     the new questionnaire and advance to next step */
+  btnStart.addEventListener("click", function(event){
 
-    if (validationResult.state) {
-      app.changeToStep(1);
+    event.preventDefault();
+    var setupValidation = validateSetup.all();
+    if (!setupValidation.isValid) {
+      setupValidation.title()
+      setupValidation.mail()
+      return
     }
-  }
 
-  btnStart.addEventListener("click", _btnStartWasPressed, true);
+
+    app.changeToStep(1);
+
+  }, true);
+
+  // Respond button (step 1)
+  /* Should validate name and scroll to first question */
+
+  // Send response button (step 1)
+  /* Should validate user name, all answers, request score,
+     send the response to server and move to the next step */
+  btnSend.addEventListener("click", function(event){
+
+    event.preventDefault();
+    // validation comes here
+    var result = app.getResult();
+    var responses = app.getResponses();
+
+    var text = "Responses are ready: \n";
+
+    for (var i = 0; i < responses.length; i++) {
+      text += "Question " + i + ": " + responses[i] + "\n";
+    }
+
+    text += '\n';
+    text += 'FINAL SCORE: ' + result;
+
+    window.alert(text);
+
+  })
+
+
 
 })()
 
-// inputs
+
+// inputs ---------------------------------------------
 var uiTitleInput = (function(){
 
   // elements
