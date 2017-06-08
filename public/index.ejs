@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <title>:: SUS Questionnaire :: #UXtools</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,800" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body class="status--setup">
 
-  <h1>S.U.S. Questionnaire</h1>
+  <div class="content">
+    <%- include('_partials/_setup'); %>
+    <%- include('_partials/_respond'); %>
+  </div>
 
-  <%- include('_partials/_setup'); %>
-  <%- include('_partials/_respond'); %>
 
   <script src="scripts/main.js" charset="utf-8"></script>
   <script src="scripts/ui.js" charset="utf-8"></script>

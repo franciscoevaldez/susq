@@ -5,7 +5,9 @@
   }
 
   & p{
-    max-width: $column-width;
+    max-width: 60%;
+    @media (max-width: $bp-medium) { max-width: 80%; }
+    @media (max-width: $bp-minimum) { max-width: 100%; }
   }
 
 }

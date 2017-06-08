@@ -1,23 +1,18 @@
 body{
 
-  font-size:   16px;
-  font-family: $ft-fonts;
-  color:       $col-text;
-
-  background-color: $col-background;
-
-  margin:      5em 3em 0 10em;
-  max-width:   50em;
+  font-size:         16px;
+  font-family:       $ft-fonts;
+  color:             $col-text;
+  background-color:  $col-background;
+  margin:            0;
 
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight:       normal;
-  letter-spacing:    0.005em;
+  font-weight:       600;
   color:             $col-titles;
 }
 
 p{
   line-height:     1.5em;
-  letter-spacing:  0.035em;
 }

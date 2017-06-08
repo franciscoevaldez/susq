@@ -3,13 +3,13 @@
 body.status{
 
   &--setup{
-    & #page--setup{display: inline;}
+    & #page--setup{display: block;}
     & #page--respond{display: none;}
   }
 
   &--respond{
     & #page--setup{display: none;}
-    & #page--respond{display: inline;}
+    & #page--respond{display: block;}
   }
 
 }
