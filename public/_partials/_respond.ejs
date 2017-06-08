@@ -1,9 +1,6 @@
 <div id="page--respond" class="page respond">
 
-  <header class="headbar">
-    <h1 class="headbar__title"><strong>Q title</strong> | S.U.S. questionnaire</h1>
-    <div class="headbar__actions">Share</div>
-  </header>
+  <%- include('_headbar'); %>
 
   <div class="respond__intro question">
     <h1 class="question__questiontext">What's your name?</h1>
@@ -19,8 +16,11 @@
 
   </div>
 
-  <div class="respond__send">
-    <a href="#" id="btn--send" class="button">Send response</a>
+  <div class="respond__send question">
+    <h1 class="question__questiontext">Ready to send?</h1>
+    <p>You can scroll and review your answers if you want to.
+      Press send when you are ready.</p>
+    <a href="#" id="btn--send" class="button">Send!</a>
   </div>
 
 </div>

@@ -29,7 +29,7 @@ var app = (function(){
   var status = ["setup", "respond", "success"];
 
   // required DOM elements
-  var body = document.getElementsByTagName("body")[0];
+  var body = document.body;
 
   // initialization
   console.log('App initializated with status 0')
@@ -63,3 +63,6 @@ var app = (function(){
   };
 
 })();
+
+// temp only for development
+app.changeToStep(1);
