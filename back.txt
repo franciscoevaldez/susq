@@ -1,0 +1,25 @@
+Response sent:
+-> formID (number)
+-> Name (Text)
+-> Responses (options, single selection)
+-> Score (Decimal)
+
+{
+    formId: 1,
+    name: 'Pepe',
+    answers:[
+        {
+            answerId:1,
+            value: 'text1'
+        },
+        {
+            answerId:2,
+            value: 1
+        },
+        {
+            answerId:3,
+            value: 5
+        }
+    ],
+    scoreFinal: 125.6
+}

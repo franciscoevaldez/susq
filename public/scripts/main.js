@@ -128,4 +128,4 @@ var app = (function(){
 
 })();
 
-app.changeToStep(1)
+//app.changeToStep(1)

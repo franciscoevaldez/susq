@@ -127,3 +127,5 @@ var app = (function(){
   };
 
 })();
+
+//app.changeToStep(1)

@@ -37,11 +37,11 @@
   }
 
   &__scale{
-    flex-grow: 2;
-    text-align: center;
-    display: flex;
-    justify-content:center;
-    align-items:center;
+    align-items:     center;
+    display:         flex;
+    flex-grow:       2;
+    justify-content: center;
+    text-align:      center;
   }
 
   &:first-of-type,
