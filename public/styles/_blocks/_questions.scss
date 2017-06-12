@@ -1,14 +1,20 @@
 // definition for question block
 .question{
 
-  padding:         1.5em 0 2em 0;
   border-bottom:   1px solid $col-titles;
-  height:          75vh;
+  display:         flex;
+  flex-direction:  column;
+  height:          95vh;
+  height:          -webkit-calc( 100vh - 4em );
+  height:             -moz-calc( 100vh - 4em );
+  height:                  calc( 100vh - 4em );
+  justify-content: space-between;
+  min-height:      25em;
 
   & h1{
-    max-width:     65%;
     font-size:     3.25em;
     line-height:   1.2em;
+    max-width:     65%;
 
     @media (max-width: $bp-medium) { max-width: 80%; }
   }
@@ -16,6 +22,7 @@
   &__responses{
     display:          flex;
     flex-direction:   row;
+    margin-bottom:    6em;
   }
 
   &__reference{
@@ -36,5 +43,13 @@
     justify-content:center;
     align-items:center;
   }
+
+  &:first-of-type,
+  &:last-of-type {
+    align-items:     baseline;
+    justify-content: flex-start;
+  }
+
+
 
 }
