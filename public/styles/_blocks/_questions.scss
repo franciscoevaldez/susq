@@ -11,6 +11,8 @@
   justify-content: space-between;
   min-height:      25em;
 
+  @media only screen and (orientation: landscape) { justify-content: flex-start; }
+
   & h1{
     font-size:     3.25em;
     line-height:   1.2em;
@@ -22,7 +24,7 @@
   &__responses{
     display:          flex;
     flex-direction:   row;
-    margin-bottom:    6em;
+    margin-bottom:    20vh;
   }
 
   &__reference{
@@ -44,8 +46,8 @@
     text-align:      center;
   }
 
-  &:first-of-type,
-  &:last-of-type {
+  &.respond__intro,
+  &.respond__send {
     align-items:     baseline;
     justify-content: flex-start;
   }

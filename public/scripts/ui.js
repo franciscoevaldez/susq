@@ -92,7 +92,10 @@ var scrollManager = (function(){
 
     if (cI == 0) {
 
-      elem.addEventListener("click", function(){scrollTo(0)})
+      elem.addEventListener("click", function(event){
+        event.preventDefault();
+        scrollToNext(event);
+      } )
 
     } else {
 
