@@ -21,6 +21,7 @@
 /* This file will:
   - Handle app status
   - Change views
+  - Generate response JSON
 */
 
 var app = (function(){
@@ -119,11 +120,40 @@ var app = (function(){
 
   }
 
+  // generate the response JSON
+  var getJSON = function(){
+    var id        = 1,                                  // form ID - ONLY DEV (SHOULD PICK UP FROM URL LATER)
+        name      = "tu vieja",                         // get respondant name
+        responses = getResponses(),                     // get responses
+        score     = getScoreFromResponses(responses);   // get final score
+
+    var formData = {
+          formId:       id,
+          name:         name,
+          answers:      [
+                        { answerId:0, value: responses[0]},
+                        { answerId:1, value: responses[1]},
+                        { answerId:2, value: responses[2]},
+                        { answerId:3, value: responses[3]},
+                        { answerId:4, value: responses[4]},
+                        { answerId:5, value: responses[5]},
+                        { answerId:6, value: responses[6]},
+                        { answerId:7, value: responses[7]},
+                        { answerId:8, value: responses[8]},
+                        { answerId:9, value: responses[9]},
+                    ],
+          scoreFinal:   score
+        }
+
+    return formData;
+  }
+
   return {
     status:       state,
     changeToStep: goToStep,
     getResult:    result,
-    getResponses: getResponses
+    getResponses: getResponses,
+    getJSON:      getJSON
   };
 
 })();

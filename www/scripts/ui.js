@@ -17,13 +17,10 @@ var ui = (function(){
   btnStart.addEventListener("click", function(event){
 
     event.preventDefault();
-    var setupValidation = validateSetup.all();
-    if (!setupValidation.isValid) {
-      setupValidation.title()
-      setupValidation.mail()
-      return
-    }
+    var isTitleValid = ui.title.isValid(),
+        isEmailValid = ui.email.isValid();
 
+    if ((!isTitleValid) || (!isEmailValid)) { return }
 
     app.changeToStep(1);
 
@@ -38,113 +35,38 @@ var ui = (function(){
   btnSend.addEventListener("click", function(event){
 
     event.preventDefault();
-    // validation comes here
-    var result = app.getResult();
-    var responses = app.getResponses();
+    // validation
 
-    var text = "Responses are ready: \n";
+    // get answer json from app
+    var answer = app.getJSON();
 
-    for (var i = 0; i < responses.length; i++) {
-      text += "Question " + i + ": " + responses[i] + "\n";
-    }
+    // send response
 
-    text += '\n';
-    text += 'FINAL SCORE: ' + result;
+    // advance to thank you
 
-    window.alert(text);
+    console.log(answer);
+    window.alert("sent!");
 
   })
 
-
-})()
-
-// inputs ---------------------------------------------
-var uiTitleInput = (function(){
-
-  // elements
-  var input = document.getElementById('input--title'),
-      errorSpan = document.getElementById('input--title--error');
-  // properties
-  var errorClass = "input--error",
-      validStates = ['This field is required', 'OK'];
-
-  // validation
-  function _validate(){
-    return (input.value) == "" ? 0 : 1
-  }
-
-  function getValidState(){
-    return validStates[_validate()];
-  }
-
-  // on blur update
-  function _wasBlurred(){
-    // validate
-    var state = _validate();
-    // reset styles
-    input.classList.remove(errorClass);
-    errorSpan.innerHTML = ""
-    // if validation fails, apply styles
-    if (state != 1) {
-      input.classList.add(errorClass);
-      errorSpan.innerHTML = validStates[state];
+  // inputs --------------------------------------------------------------------
+  var titleInput = new susTextBox('input--title', false);
+  var emailInput = new susTextBox('input--email', function(_value){
+    if (_value == "") {
+      return {valid: false, message: false}     // email validation 1: should not be empty
+    } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(_value))) {
+      return {valid: false, message: "Please enter a valid email"}  // email validation 2: should match the email pattern
+    } else {
+      return {valid: true, message: false} // otherwise is valid
     }
+  });
+  var nameInput = new susTextBox('response--name', false);
 
-  }
 
-  // listeners
-  input.addEventListener("blur", _wasBlurred, true);
-
-  return{
-    validate : getValidState
-  }
-
-})();
-
-var uiEmailInput = (function(){
-
-  // elements
-  var input = document.getElementById('input--email'),
-      errorSpan = document.getElementById('input--email--error');
-  // properties
-  var errorClass = "input--error",
-      validStates = ['This field is required', 'OK', 'Please enter a valid email address'];
-
-  // validation
-  function _validate(){
-    var value = input.value
-    // mail should not be empty
-    if(value == ''){ return 0 }
-    // mail should follow this pattern
-    if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))){ return 2 }
-    // if so, it is valid
-    return 1
-  }
-
-  function getValidState(){
-    return validStates[_validate()];
-  }
-
-  // on blur update
-  function _wasBlurred(){
-    // validate
-    var state = _validate();
-    // reset styles
-    input.classList.remove(errorClass);
-    errorSpan.innerHTML = ""
-    // if validation fails, apply styles
-    if (state != 1) {
-      input.classList.add(errorClass);
-      errorSpan.innerHTML = validStates[state];
-    }
-
-  }
-
-  // listeners
-  input.addEventListener("blur", _wasBlurred, true);
-
-  return{
-    validate : getValidState
+  return {
+    title : titleInput,
+    email : emailInput,
+    name  : nameInput
   }
 
 })();

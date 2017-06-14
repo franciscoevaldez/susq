@@ -83,35 +83,34 @@ var scrollManager = (function(){
 
   // scroll function
   var scrollTo = (function(i){
+    if (i >= elements.length) { return }      // abort if there is no target
 
-    console.log("scrolling to: " + i);
-
-    if (i >= elements.length) { return }
-
-    var targetElement = elements[i].next,
-        targetScroll = targetElement.offsetTop - ( 4 * 16 );
-
-    //window.scrollTo(0, targetScroll)
-    console.log(targetScroll);
-    smoothScrollTo(targetScroll)
+    var targetElement = elements[i].next;
+    smoothScrollTo( targetElement.offsetTop - ( 4 * 16 ) )
+    
   });
 
   var smoothScrollTo = (function(target){
-    var currentScroll = window.scrollY,
-        targetScroll = target,
-        delta = targetScroll-currentScroll,
-        duration = 60,
-        displace = delta/duration;
+
+    var sP = window.scrollY,    // Starting Point
+        tP = target,            // Target Point
+        tD = tP - sP,           // Total displacement
+        fr = 60,                // Frame number
+        aIdx = 0;               // Animation index
 
     var i = setInterval(function(){
-    	if (delta == 0){ return }
+    	if (tD == 0){ return }                 // Abort if no displacement
 
-      currentScroll = Math.round(currentScroll + displace)
-    	window.scrollTo(0,currentScroll)
+      var dIdx = aIdx/fr;                   // Distorted Animation index
+          dIdx = dIdx<.5 ? 4*dIdx*dIdx*dIdx : (dIdx-1)*(2*dIdx-2)*(2*dIdx-2)+1;
 
-        if(currentScroll >= targetScroll) {
-            clearInterval(i);
-        }
+      var delta = Math.round(tD * dIdx),    // delta = total displacement * distorted index
+          scroll = sP + delta;              // current scroll is tD*dIdx + starting point
+    	window.scrollTo(0,scroll)             // run the scroll
+
+      if(dIdx == 1) { clearInterval(i); }   // if anmimation index = 1, end loop
+
+      aIdx++;
     }, 5);
   })
 
