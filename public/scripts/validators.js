@@ -9,7 +9,8 @@ var validateSetup = (function() {
 
   // catch objects
   var inputTitle = document.getElementById('input--title'),
-      inputEmail = document.getElementById('input--email');
+      inputEmail = document.getElementById('input--email'),
+      inputName  = document.getElementById('input--name');
 
   // title validation: should never be empty
   function validateTitle(){
@@ -77,9 +78,6 @@ var validateSetup = (function() {
     }
 
   }
-
-  inputTitle.addEventListener("blur", validateTitle, true);
-
 
   return{
     title : validateTitle,
