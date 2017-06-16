@@ -1,15 +1,22 @@
 .headbar{
-  display:       block;
-  position:      fixed;
-  height:        4em;
-  top:           0;
-  background:    $col-background;
-  border-bottom: 1px solid $col-titles;
-  width:         100%;
+  align-items:       center;
+  background:        $col-background;
+  border-bottom:     1px solid $col-titles;
+  display:           flex;
+  flex-direction:    row;
+  height:            4em;
+  justify-content:   space-between;
+  position:          fixed;
+  top:               0;
+  width:             100%;
+
+  @media (max-width: $bp-medium) { margin: 0; }
 
   & h1{
     font-size: 1.5em;
     display:   inline-block;
+
+    @media (max-width: $bp-medium) { font-size: 1em; }
   }
 
   &__actions{

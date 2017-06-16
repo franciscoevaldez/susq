@@ -11,20 +11,25 @@
   justify-content: space-between;
   min-height:      25em;
 
-  @media only screen and (orientation: landscape) { justify-content: flex-start; }
+  @media (max-width: $bp-medium) { justify-content: flex-start; }
 
   & h1{
     font-size:     3.25em;
     line-height:   1.2em;
     max-width:     65%;
 
-    @media (max-width: $bp-medium) { max-width: 80%; }
+    @media (max-width: $bp-medium) { max-width: 80%; font-size: 1.75em;}
   }
 
   &__responses{
     display:          flex;
     flex-direction:   row;
     margin-bottom:    20vh;
+
+    @media (max-width: $bp-medium) {
+      flex-direction: column;
+      margin-bottom:  2em;
+    }
   }
 
   &__reference{
@@ -33,17 +38,23 @@
     line-height:     1.1em;
     margin:          0;
 
+    @media (max-width: $bp-medium) { text-align: center; }
+
     &:last-of-type{
       text-align: right;
+      @media (max-width: $bp-medium) { text-align: center; }
     }
   }
 
   &__scale{
     align-items:     center;
     display:         flex;
+    flex-direction:  row;
     flex-grow:       2;
     justify-content: center;
     text-align:      center;
+
+    @media (max-width: $bp-medium) { flex-direction: column; }
   }
 
   &.respond__intro,

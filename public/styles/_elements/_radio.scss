@@ -1,17 +1,17 @@
 // custom radio buttons
 input[type="radio"] {
-  appearance:none;
-  margin:0 40px;
-  width: 24px;
-  height: 24px;
-  background: #eeeeee;
+  appearance:    none;
+  margin:        2em 4em;
+  width:         24px;
+  height:        24px;
+  background:    #eeeeee;
   box-shadow:
     inset 0 0 0 .4em white,
     0 0 0 .3em;
   border-radius: 50%;
-  transition: .2s;
-  cursor:pointer;
-  color: #363945;
+  transition:    .2s;
+  cursor:        pointer;
+  color:         #363945;
 
   &:hover,
   &:checked {
