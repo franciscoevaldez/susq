@@ -28,6 +28,16 @@ var ui = (function(){
 
   // Respond button (step 1)
   /* Should validate name and scroll to first question */
+  btnRespond.addEventListener('click', function(event){
+    event.preventDefault();
+
+    if( !(ui.name.isValid()) ){
+      window.alert("Please don't forget your name")
+      return
+    };
+
+    scrollManager.scrollTo(0);
+  });
 
   // Send response button (step 1)
   /* Should validate user name, all answers, request score,
@@ -36,6 +46,19 @@ var ui = (function(){
 
     event.preventDefault();
     // validation
+    var isNameValid = ui.name.isValid(),
+        responses   = app.getResponses(),
+        isFormValid = true;
+
+    if (!isNameValid) { isFormValid = false }
+    for (var i = 0; i < 10; i++) {
+      if( !((responses[i]>=0) && (responses[i]<=4)) ) { isFormValid = false }
+    }
+
+    if (!isFormValid) {
+      window.alert('It seems some answer is missing, please answer all questions and try again.');
+      return
+    }
 
     // get answer json from app
     var answer = app.getJSON();
@@ -43,7 +66,6 @@ var ui = (function(){
     // send response
 
     // advance to thank you
-
     console.log(answer);
     window.alert("sent!");
 
