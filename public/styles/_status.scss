@@ -5,11 +5,19 @@ body.status{
   &--setup{
     & #page--setup{display: block;}
     & #page--respond{display: none;}
+    & #page--ending{display: none;}
   }
 
   &--respond{
     & #page--setup{display: none;}
     & #page--respond{display: block;}
+    & #page--ending{display: none;}
+  }
+
+  &--ending{
+    & #page--setup{display: none;}
+    & #page--respond{display: none;}
+    & #page--ending{display: block;}
   }
 
 }
