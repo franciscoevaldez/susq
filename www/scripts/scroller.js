@@ -25,30 +25,21 @@ var scrollManager = (function(){
 
   }
 
-  // bound listeners
-  for (var cI = 0; cI < elements.length; cI++) {
+  // bound listeners for radio buttons
+  for (var cI = 1; cI < elements.length; cI++) {
     var elem = elements[cI].triggers;
 
-    if (cI == 0) {
-
-      elem.addEventListener("click", function(event){
-        event.preventDefault();
-        scrollToNext(event);
-      } )
-
-    } else {
-
-      for (var radI = 0; radI < elem.length; radI++) {
-        var elemToBound = elem[radI];
-        elemToBound.addEventListener("click",
-          function(event){
-            scrollToNext(event);
-          } );
-      }
-
+    for (var radI = 0; radI < elem.length; radI++) {
+      var elemToBound = elem[radI];
+      elemToBound.addEventListener("click",
+        function(event){
+          scrollToNext(event);
+        } );
     }
+
   }
 
+  // get index for element
   function getIndexForElement(anElement){
     for (var elI = 0; elI < elements.length; elI++) {
       var trigger = elements[elI].triggers;
@@ -87,7 +78,7 @@ var scrollManager = (function(){
 
     var targetElement = elements[i].next;
     smoothScrollTo( targetElement.offsetTop - ( 4 * 16 ) )
-    
+
   });
 
   var smoothScrollTo = (function(target){

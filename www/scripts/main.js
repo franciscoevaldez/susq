@@ -27,7 +27,7 @@
 var app = (function(){
 
   var state,
-      status = ["setup", "respond", "success"];
+      status = ["setup", "respond", "ending"];
 
   // required DOM elements
   var body = document.body;
