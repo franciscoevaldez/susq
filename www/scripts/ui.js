@@ -72,8 +72,12 @@ var ui = (function(){
 
   })
 
+  // inputs ---------------------------------------------
   // Title input
   var titleInput = new susTextBox('input--title', false);
+
+  // Name input
+  var nameInput = new susTextBox('response--name', false);
 
   // Email input
   var emailInput = new susTextBox('input--email', function(_value){
@@ -86,14 +90,31 @@ var ui = (function(){
     }
   });
 
-  // Name input
-  var nameInput = new susTextBox('response--name', false);
+  // radio buttons ---------------------------------------------
+  var scaleSets = [];
 
+  // get radiosets
+  for (var i = 0; i < 10; i++) {
+    scaleSets[i] = new susScaleSet( ('q'+i) );
+  }
+  
+  // Keypresses
+  document.onkeypress = function(e) {
+    var event = e || window.event;
+    var charCode = event.which || event.keyCode;
+
+    if ( charCode == '13' ) {
+      // Enter pressed
+	    console.log('pressed')
+      return false;
+    }
+  }
 
   return {
-    title : titleInput,
-    email : emailInput,
-    name  : nameInput
+    title   : titleInput,
+    email   : emailInput,
+    name    : nameInput,
+    scales  : scaleSets
   }
 
 })();
