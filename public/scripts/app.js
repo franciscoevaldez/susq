@@ -27,7 +27,7 @@
 var app = (function(){
 
   var state,
-      status = ["setup", "respond", "ending"];
+      status = ["setup", "respond", "ending", "results"];
 
   // required DOM elements
   var body = document.body;
@@ -158,4 +158,4 @@ var app = (function(){
 
 })();
 
-//app.changeToStep(1)
+app.changeToStep(3)

@@ -1,0 +1,56 @@
+.results{
+
+    &__card{
+        align-items:    center;
+        border:         1px solid $col-text;
+        border-radius:  1em;
+        display:        flex;
+        margin:         4em;
+        padding:        8vh 0;
+
+        @media (max-width: $bp-medium) {
+            flex-direction: column;
+            margin:         1em 0;
+            padding:        2em 0;
+        }
+    }
+
+    &__score,
+    &__grade{
+        flex-grow:  1;
+        text-align: center;
+
+        &:last-of-type{
+            border-left: $br-common;
+
+            @media (max-width: $bp-medium) {
+                margin-top: 2em;
+                border:     none;
+            }
+
+        }
+
+    }
+
+    &__hero{
+        font-size:      8.5em;
+        line-height:    1em;
+        margin:         0;
+
+        @media (max-width: $bp-medium) {
+            font-size: 6em;
+            margin:    0;
+        }
+    }
+
+    h2{
+        font-size:      1.4em;
+        line-height:    1em;
+        margin:         0;
+    }
+
+    h3{
+        margin: 3em 0 1em 0;
+    }
+    
+}
