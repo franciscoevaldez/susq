@@ -1,7 +1,7 @@
 .page{
 
   max-width: 65em;
-  margin: 0 auto;
+  margin:    0 auto;
 
   @media (max-width: $bp-large)   { max-width: 58em; }
   @media (max-width: $bp-medium)  { max-width: 46em; }
