@@ -45,6 +45,11 @@ var app = (function(){
 
     state = status[newState];
 
+    // if page is results, parse and show
+    if (newState == 3){
+      susResult.parseJSON(formReturnExample);
+    }
+
     // update UI
     _cleanBody();
     body.classList.add("status--" + status[newState]);
@@ -158,4 +163,4 @@ var app = (function(){
 
 })();
 
-app.changeToStep(3)
+//app.changeToStep(3)
